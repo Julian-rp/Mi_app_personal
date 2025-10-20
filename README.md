@@ -73,10 +73,6 @@ npm install
 npx expo start --clear
 ```
 
-Dónde editar tus datos
-----------------------
-- Abre `data.ts` y reemplaza `personalInfo`, `contacts`, `skills` y `projects` con tu información.
-
 Notas rápidas
 ------------
 - Si las clases Tailwind (NativeWind) no se aplican, reinicia Metro y revisa `babel.config.js` / `tailwind.config.js`.
