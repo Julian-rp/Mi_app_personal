@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 
 interface ProjectCardProps {
   emoji: string
@@ -10,23 +10,85 @@ interface ProjectCardProps {
 
 export function ProjectCard({ emoji, title, description, tags }: ProjectCardProps) {
   return (
-    <View className="bg-white rounded-xl p-5 mb-4 border border-gray-100 shadow-card">
-      <View className="flex-row items-center mb-3">
-        <View className="w-12 h-12 rounded-full bg-gray-50 items-center justify-center mr-3">
-          <Text className="text-2xl">{emoji}</Text>
+    <View style={styles.card}>
+      <View style={styles.header}>
+        <View style={styles.emojiCircle}>
+          <Text style={styles.emoji}>{emoji}</Text>
         </View>
-        <Text className="text-lg font-bold text-gray-900 flex-1">{title}</Text>
+        <Text style={styles.title}>{title}</Text>
       </View>
 
-      <Text className="text-base text-gray-600 mb-3 leading-6">{description}</Text>
+      <Text style={styles.description}>{description}</Text>
 
-      <View className="flex-row flex-wrap">
+      <View style={styles.tagsContainer}>
         {tags.map((tag, idx) => (
-          <View key={idx} className="bg-primary-100 rounded-full px-3 py-1 mr-2 mb-2">
-            <Text className="text-sm text-primary-700 font-medium">{tag}</Text>
+          <View key={idx} style={styles.tag}>
+            <Text style={styles.tagText}>{tag}</Text>
           </View>
         ))}
       </View>
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  card: {
+    backgroundColor: 'white',
+    borderRadius: 12,
+    padding: 20,
+    marginBottom: 16,
+    borderWidth: 1,
+    borderColor: '#F3F4F6',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 3,
+  },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 12,
+  },
+  emojiCircle: {
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    backgroundColor: '#F9FAFB',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginRight: 12,
+  },
+  emoji: {
+    fontSize: 24,
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: '700',
+    color: '#111827',
+    flex: 1,
+  },
+  description: {
+    fontSize: 16,
+    color: '#6B7280',
+    marginBottom: 12,
+    lineHeight: 24,
+  },
+  tagsContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
+  tag: {
+    backgroundColor: '#E0E7FF',
+    borderRadius: 16,
+    paddingHorizontal: 12,
+    paddingVertical: 4,
+    marginRight: 8,
+    marginBottom: 8,
+  },
+  tagText: {
+    fontSize: 14,
+    color: '#4338CA',
+    fontWeight: '500',
+  },
+})

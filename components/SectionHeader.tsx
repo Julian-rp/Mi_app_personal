@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 
 interface SectionHeaderProps {
   title: string
@@ -8,11 +8,26 @@ interface SectionHeaderProps {
 
 export function SectionHeader({ title, emoji }: SectionHeaderProps) {
   return (
-    <View className="flex-row items-center justify-between mb-4">
-      <Text className="text-2xl font-bold text-gray-900">{emoji ? `${emoji} ` : ''}{title}</Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>
+        {emoji ? `${emoji} ` : ''}{title}
+      </Text>
     </View>
   )
 }
 
-export default SectionHeader
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 16,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: '700',
+    color: '#111827',
+  },
+})
 
+export default SectionHeader

@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 
 interface SkillCardProps {
   emoji: string
@@ -8,11 +8,46 @@ interface SkillCardProps {
 
 export function SkillCard({ emoji, name }: SkillCardProps) {
   return (
-      <View className="bg-white rounded-lg p-4 mb-3 flex-row items-center border border-gray-100 shadow-card">
-      <View className="w-12 h-12 rounded-md bg-gray-50 items-center justify-center mr-4">
-        <Text className="text-2xl">{emoji}</Text>
+    <View style={styles.card}>
+      <View style={styles.emojiBox}>
+        <Text style={styles.emoji}>{emoji}</Text>
       </View>
-      <Text className="text-lg font-semibold text-gray-800">{name}</Text>
+      <Text style={styles.name}>{name}</Text>
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  card: {
+    backgroundColor: 'white',
+    borderRadius: 8,
+    padding: 16,
+    marginBottom: 12,
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: '#F3F4F6',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 3,
+  },
+  emojiBox: {
+    width: 48,
+    height: 48,
+    borderRadius: 6,
+    backgroundColor: '#F9FAFB',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginRight: 16,
+  },
+  emoji: {
+    fontSize: 24,
+  },
+  name: {
+    fontSize: 18,
+    fontWeight: '600',
+    color: '#1F2937',
+  },
+})

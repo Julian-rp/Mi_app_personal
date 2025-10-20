@@ -5,55 +5,51 @@ import { ProfileSection } from './components/ProfileSection'
 import { SkillCard } from './components/SkillCard'
 import { ProjectCard } from './components/ProjectCard'
 import { SectionHeader } from './components/SectionHeader'
-import type { ContactInfo, Skill, Project } from './types' // si usas types.ts
+import { personalInfo, contacts, skills, projects } from './data'
 
-// Si no usas types.ts, pega aquí las interfaces y datos tal como en la sección "Tipos e datos".
-import { personalInfo, contacts, skills, projects } from './data' // o define inline
+// Importa el CSS de NativeWind
+import './global.css'
 
 export default function App() {
   return (
     <SafeAreaProvider>
-      <SafeAreaView edges={["top", "bottom"]} className="flex-1 bg-gray-50">
+      <SafeAreaView edges={["top", "bottom"]} style={{ flex: 1, backgroundColor: '#F9FAFB' }}>
         <ScrollView showsVerticalScrollIndicator={false}>
-          {/* TEST: comprueba que NativeWind aplica clases */}
-          <View className="p-4 bg-red-500 items-center">
-            <Text className="text-white font-bold">TEST: NativeWind</Text>
-          </View>
           {/* Sección Perfil */}
-        <ProfileSection
-          name={personalInfo.name}
-          title={personalInfo.title}
-          avatar={personalInfo.avatar}
-          bio={personalInfo.bio}
-          contacts={contacts}
-        />
+          <ProfileSection
+            name={personalInfo.name}
+            title={personalInfo.title}
+            avatar={personalInfo.avatar}
+            bio={personalInfo.bio}
+            contacts={contacts}
+          />
 
-        {/* Separator */}
-        <View className="h-px bg-gray-300 mx-5 my-8" />
+          {/* Separator */}
+          <View style={{ height: 1, backgroundColor: '#D1D5DB', marginHorizontal: 20, marginVertical: 32 }} />
 
-        {/* Mis Habilidades */}
-        <View className="mx-5">
-          <SectionHeader emoji="💪" title="Mis Habilidades" />
-          {skills.map((skill) => (
-            <SkillCard key={skill.id} emoji={skill.emoji} name={skill.name} />
-          ))}
-        </View>
+          {/* Mis Habilidades */}
+          <View style={{ marginHorizontal: 20 }}>
+            <SectionHeader emoji="💪" title="Mis Habilidades" />
+            {skills.map((skill) => (
+              <SkillCard key={skill.id} emoji={skill.emoji} name={skill.name} />
+            ))}
+          </View>
 
-        <View className="h-px bg-gray-300 mx-5 my-8" />
+          <View style={{ height: 1, backgroundColor: '#D1D5DB', marginHorizontal: 20, marginVertical: 32 }} />
 
-        {/* Mis Proyectos */}
-        <View className="mx-5 mb-10">
-          <SectionHeader emoji="🚀" title="Mis Proyectos" />
-          {projects.map((project) => (
-            <ProjectCard
-              key={project.id}
-              emoji={project.emoji}
-              title={project.title}
-              description={project.description}
-              tags={project.tags}
-            />
-          ))}
-        </View>
+          {/* Mis Proyectos */}
+          <View style={{ marginHorizontal: 20, marginBottom: 40 }}>
+            <SectionHeader emoji="🚀" title="Mis Proyectos" />
+            {projects.map((project) => (
+              <ProjectCard
+                key={project.id}
+                emoji={project.emoji}
+                title={project.title}
+                description={project.description}
+                tags={project.tags}
+              />
+            ))}
+          </View>
         </ScrollView>
       </SafeAreaView>
     </SafeAreaProvider>
