@@ -76,12 +76,33 @@ npx expo start --clear
 Notas rápidas
 ------------
 - Si las clases Tailwind (NativeWind) no se aplican, reinicia Metro y revisa `babel.config.js` / `tailwind.config.js`.
----
 
 ---
+
+## 📸 Capturas de pantalla
+
+3 capturas que muestren la app funcionando (Perfil, Habilidades, Proyectos). En `screenshots/` estan las capturas de la app funcionando:
+
+- `screenshots/perfil.png`
+- `screenshots/habilidades.png`
+- `screenshots/proyectos.png`   
+
+Consejo: toma las capturas desde Expo Go o el emulador, súbelas al repo y haz commit.
+
+---
+
+#### Vista previa
+
+![Perfil](screenshots/perfil.png)
+
+![Habilidades](screenshots/habilidades.png)
+
+![Proyectos](screenshots/proyectos.png)
+
 
 ## 👨‍💻 Autor
-**Julian Rivera**
+- **Nombre:** Julian Rivera
+- **Fecha:** 2025-10-19
 
 
 
