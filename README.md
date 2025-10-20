@@ -2,10 +2,6 @@
 
 Una aplicación móvil moderna desarrollada con **React Native** y **Expo** que muestra tu perfil profesional, habilidades y proyectos de forma elegante y minimalista.
 
-![React Native]()
-![TypeScript]
-![Expo]
-
 ---
 
 ## ✨ Características
