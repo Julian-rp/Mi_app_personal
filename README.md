@@ -2,9 +2,9 @@
 
 Una aplicación móvil moderna desarrollada con **React Native** y **Expo** que muestra tu perfil profesional, habilidades y proyectos de forma elegante y minimalista.
 
-![React Native](https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![Expo](https://img.shields.io/badge/Expo-000020?style=for-the-badge&logo=expo&logoColor=white)
+![React Native]()
+![TypeScript]
+![Expo]
 
 ---
 
@@ -63,12 +63,32 @@ mi-app-personal/
 | `expo start -c` | Inicia limpiando caché |
 
 ---
+Cómo ejecutar (mínimo)
+----------------------
+1. Instala dependencias:
+
+```bash
+npm install
+```
+
+2. Inicia Metro/Expo:
+
+```bash
+npx expo start --clear
+```
+
+Dónde editar tus datos
+----------------------
+- Abre `data.ts` y reemplaza `personalInfo`, `contacts`, `skills` y `projects` con tu información.
+
+Notas rápidas
+------------
+- Si las clases Tailwind (NativeWind) no se aplican, reinicia Metro y revisa `babel.config.js` / `tailwind.config.js`.
 ---
 
 ---
 
 ## 👨‍💻 Autor
-
 **Julian Rivera**
 
 

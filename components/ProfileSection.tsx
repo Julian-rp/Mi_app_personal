@@ -15,7 +15,6 @@ export function ProfileSection({ name, title, avatar, bio, contacts }: ProfileSe
     <View>
       {/* HEADER */}
       <View style={styles.header}>
-        <Text style={styles.headerText}>MI APP PERSONAL</Text>
       </View>
 
       {/* AVATAR */}
